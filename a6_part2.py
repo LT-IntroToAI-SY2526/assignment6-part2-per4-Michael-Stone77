@@ -317,12 +317,12 @@ def make_prediction(model, sqft, bedrooms, bathrooms, age):
     # TODO: Print the house specs and predicted price nicely formatted
     
     # TODO: Return the predicted price
-    house_features = pd.DataFrame([['SquareFeet', 'Age', 'Bedrooms', 'Bathrooms']], 
+    house_features = pd.DataFrame([['SquareFeet', 'Age', 'Bedrooms', 'Bathrooms', 'Price']], 
                                  columns=['SquareFeet', 'Bedrooms', 'Bathrooms', 'Age'])
     predicted_price = model.predict(house_features)[0]
 
     print(f"\n=== New Prediction ===")
-    print(f"house specs: {'SquareFeet':.0f}k miles, {'age'} years old, {'Bedrooms'}, {'Bathrooms'}")
+    print(f"house specs: {'SquareFeet':.0f}k feet, {'age'} years old, {'Bedrooms'}, {'Bathrooms'}")
     print(f"Predicted price: ${predicted_price:,.2f}")
     
     return predicted_price
